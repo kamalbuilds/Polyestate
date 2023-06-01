@@ -44,6 +44,7 @@ function HeaderComponent({ style }) {
                 <Space size={20}>
                   <Link href="/vc">Authenticate</Link>
                   <Link href="/upload">Create Auction</Link>
+                  <Link href="/list">List NFTs</Link>
                   <ConnectButton label="Connect Wallet" accountStatus="address" />
                   <Link href="/account">
                     <div className="profile" style={{ borderRadius: '50%' }}>
