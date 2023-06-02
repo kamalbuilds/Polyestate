@@ -26,7 +26,7 @@ import {
   import toastStyle from "../../../utils/toastConfig";
   import { useNFTs } from "@thirdweb-dev/react";
   import { useRouter } from "next/router";
-//   import Checkout from "../../../components/Checkout";
+  import Checkout from "../../../components/Checkout";
 
   type Props = {
     nft: NFT;
@@ -356,7 +356,7 @@ import {
                     Buy at asking price
                   </Web3Button>
                 
-                    {/* <Checkout /> */}
+                    <Checkout />
                   <div className={`${styles.listingTimeContainer} ${styles.or}`}>
                     <p className={styles.listingTime}>or</p>
                   </div>
