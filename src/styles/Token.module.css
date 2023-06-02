@@ -193,13 +193,13 @@
   .traitValue {
     font-weight: 600;
     margin: 0px;
-    color: rgba(255, 255, 255, 0.9);
+    color: blueviolet;
   }
   
   .traitName {
     font-weight: 400;
     margin: 0px;
-    color: rgba(255, 255, 255, 0.6);
+    color: blue;
   }
   
   .eventContainer {

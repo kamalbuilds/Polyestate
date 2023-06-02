@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import cidToImageUrl from '../utils/cidToImageUrl';
-import { useContract, useNFTs } from "@thirdweb-dev/react";
+import { useContract, useNFTs , useContractRead } from "@thirdweb-dev/react";
 import React from "react";
 import Container from "../components/Container/Container";
 import NFTGrid from "../components/NFT/NFTGrid";
@@ -14,10 +14,11 @@ const { Text } = Typography;
 
 function Games() {
   const [gameList, setGameList] = useState([]);
-  const { contract, isLoading } = useContract("0x3c20e7b59BDaff750708ea965A15155079BB4eb7");
-  console.log(contract,"martketplace");
+  const { contract, isLoading } = useContract("0x2979d8b7A0D9024DFa73D37C946ff691Ff0bcc00");
   const { data, isLoading : nftloading } = useNFTs(contract);
 
+  const { data : listingdata, isLoading : listingloaded } = useContractRead(contract, "getAllListings", [0,0]);
+  console.log(data,isLoading,"data");
   useEffect(() => {
     axios({
       baseURL: 'https://maildeep.info/app',
