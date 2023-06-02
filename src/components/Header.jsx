@@ -1,12 +1,12 @@
 import { CodeSandboxOutlined, UserOutlined } from '@ant-design/icons';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Avatar, Col, Drawer, Grid, Layout, Row, Space } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useAccount, useEnsAvatar } from 'wagmi';
 import logo from "../../public/assets/images/polyestate.png";
-
+import { ConnectWallet } from '@thirdweb-dev/react';
+import { useAddress } from '@thirdweb-dev/react';
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
@@ -44,8 +44,9 @@ function HeaderComponent({ style }) {
                 <Space size={20}>
                   <Link href="/vc">Authenticate</Link>
                   <Link href="/upload">Create Auction</Link>
-                  <Link href="/list">List NFTs</Link>
-                  <ConnectButton label="Connect Wallet" accountStatus="address" />
+                  <Link href="/createnft">Create NFTs</Link>
+                  <Link href="/sell">List NFTs</Link>
+                  <ConnectWallet />
                   <Link href="/account">
                     <div className="profile" style={{ borderRadius: '50%' }}>
                       {ensAvatar ? (
@@ -66,7 +67,7 @@ function HeaderComponent({ style }) {
               <Row justify="end" align="middle">
                 {!screens.sm && (
                   <Row justify="end" align="middle">
-                    <ConnectButton label="Sign in" accountStatus="address" />
+                    <ConnectWallet />
                   </Row>
                 )}
                 <CodeSandboxOutlined

@@ -74,7 +74,7 @@ export default function SaleInfo({ nft }: Props) {
   console.log(createDirectListing, isLoading, error);
 
   // Manage form submission state using tabs and conditional rendering
-  const [tab, setTab] = useState<"direct" | "auction" | "bridge" >("direct");
+  const [tab, setTab] = useState<"direct" | "auction" >("direct");
 
   // Manage form values using react-hook-form library: Auction form
   const { register: registerAuction, handleSubmit: handleSubmitAuction } =
@@ -177,13 +177,6 @@ export default function SaleInfo({ nft }: Props) {
             onClick={() => setTab("auction")}
           >
             Auction
-          </h3>
-          <h3
-            className={`${profileStyles.tab} 
-        ${tab === "bridge" ? profileStyles.activeTab : ""}`}
-            onClick={() => setTab("bridge")}
-          >
-            Bridge
           </h3>
         </div>
 
@@ -326,16 +319,6 @@ export default function SaleInfo({ nft }: Props) {
           >
             Create Auction Listing
           </Web3Button>
-        </div>
-        <div
-          className={`${
-            tab === "bridge"
-              ? styles.activeTabContent
-              : profileStyles.tabContent
-          }`}
-          style={{ flexDirection: "column" }}
-        >
-          <Bridge721NFT nft={nft} />
         </div>
       </div>
     </>

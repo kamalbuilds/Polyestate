@@ -32,7 +32,7 @@ const wagmiClient = createClient({
 
 export default function App({ Component, pageProps }) {
   return (
-    <ThirdwebProvider activeChain="mumbai" theme='light'>
+    <ThirdwebProvider activeChain="mumbai" theme="light">
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains}>
           <LayoutComponent>
