@@ -1,0 +1,80 @@
+.header {
+  background-color: #fff;
+  line-height: 64px;
+  h1 {
+    @include titleFont(24);
+  }
+  .logo-img {
+    width: 150px;
+  }
+  .lang-img {
+    width: 30px;
+  }
+  .profile {
+    position: relative;
+  }
+  
+  .navbar-area {
+    padding-inline: 0;
+    span {
+      @include subTitleFont(16);
+    }
+  }
+  .sandwich {
+    font-size: 24px;
+  }
+  // @include color('main-red');
+  // sidbar css overrides
+  .sidebar {
+    .ant-drawer-content-wrapper {
+      box-shadow: none;
+    }
+    .ant-drawer-content {
+      background-color: transparent;
+    }
+    .ant-drawer-body {
+      padding: 24px;
+      padding-top: 80px;
+      background: rgba(63, 63, 63, 0.95);
+      border-radius: 10px 0px 0px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .logo {
+      width: 100%;
+    }
+    &__item-area {
+      padding: 5px;
+    }
+    &__item {
+      padding: 20px 20px;
+      border-bottom: 0.5px solid rgb(154, 154, 154);
+      p {
+        @include color('dark-0');
+        @include textFont(16);
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
+    .location-area {
+      flex-direction: column;
+      padding-bottom: 50px;
+    }
+    .location-circle {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      padding: 5px 5px;
+      border: 1px solid white;
+      border-radius: 50%;
+      p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include color('dark-0');
+      }
+    }
+  }
+}

@@ -1,0 +1,181 @@
+@import './config';
+
+$height-head: 64px;
+$height-footer: 152px;
+.ant-layout {
+  // @include md {
+  //   width: 498px !important;
+  //   margin: 0 auto;
+  // }
+  // ---------- Layout 開始 ----------
+  .ant-layout-header {
+    // Header
+    padding-inline: 0px;
+    width: 100%;
+    height: $height-head;
+    position: relative;
+    top: 0;
+    z-index: 100;
+    // @include md {
+    //   width: 498px;
+    //   margin: 0 auto;
+    // }
+    // 灰色背景
+    // &.bg-gray {
+    //   @include background_color('bg-color-1');
+    // }
+    // // 白色背景
+    // &.bg-white {
+    //   @include background_color('bg-color-primary');
+    // }
+    // // 藍色背景
+    // &.bg-blue {
+    //   @include background_color('bg-color-2');
+    //   .back-img {
+    //     -webkit-filter: invert(100%); /* Safari */
+    //     filter: invert(100%);
+    //   }
+    // }
+    .search-box,
+    .search-box .ant-input {
+      @include background_color('color-gray-2');
+    }
+  }
+  .ant-layout-content {
+    // Content
+    position: relative;
+    z-index: 1;
+    @include background_color('bg-color-primary');
+    width: 100%;
+    min-height: calc(100vh);
+    @include color('color-1');
+    margin: -$height-head 0 0 0;
+    padding-top: $height-head;
+    .title {
+      width: 100%;
+      text-align: left;
+    }
+  }
+  .ant-layout-footer {
+    // Footer
+    width: 100%;
+    height: auto;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: 33px 5%;
+    z-index: 100;
+    @include xl {
+      height: $height-footer;
+    }
+  }
+  // ---------- Layout 結束 ----------
+  
+  // ---------- Button 開始 ----------
+  .ant-btn {
+    box-shadow: none;
+    height: 45px;
+    &.ant-btn-default {
+      @include color('color-primary');
+      @include border('color-gray-1');
+    }
+    &.ant-btn-primary {
+      @include background_color('gray-02');
+      @include titleFont(18);
+      padding-left: 45px;
+      padding-right: 45px;
+      &:hover {
+        @include color('dark-100');
+        @include background_color('dark-0');
+      }
+      &:active {
+        @include color('dark-100');
+        @include background_color('gray-01');
+        // background-color: #f8f8f9;
+      }
+      &:disabled {
+        @include color('dark-0');
+        @include background_color('gray-03');
+        border: none;
+      }
+    }
+  }
+
+  // ---------- Button 結束 ----------
+  // ---------- Switch 開始 ----------
+  .ant-switch,
+  .ant-switch:hover:not(.ant-switch-disabled) {
+    @include background_color('bg-color-1');
+    &.ant-switch-checked,
+    &.ant-switch-checked:hover:not(.ant-switch-disabled) {
+      @include background_color('color-secondary');
+    }
+  }
+  // ---------- Switch 結束 ----------
+  // ---------- Input 開始 ----------
+  .ant-input,
+  .ant-input-password,
+  .ant-input-affix-wrapper {
+    @include border('color-gray-1');
+    border-width: 2px;
+    &::placeholder {
+      @include color('color-gray-3');
+    }
+  }
+  // ---------- Input 結束 ----------
+  // ---------- Select 開始 ----------
+  .ant-select {
+    .ant-select-selector {
+      @include border('color-gray-1');
+      border-width: 2px;
+      .ant-select-selection-placeholder {
+        @include color('color-gray-3');
+      }
+    }
+  }
+  // ---------- Select 結束 ----------
+  // ---------- Card 開始 ----------
+  .ant-card {
+    border-radius: 10px;
+  }
+  // ---------- Card 結束 ----------
+  // ---------- 共用Class 開始 ----------
+  .common-round-panel {
+    @include background_color('color-gray-2');
+    .round-panel-inside {
+      @include background_color('bg-color-primary');
+      border-radius: 10px 10px 0 0;
+    }
+  }
+  // ---------- 共用Class 結束 ----------
+}
+// ---------- Modal 開始 ----------
+.ant-modal {
+  @include md {
+    width: 358px !important;
+    margin: 0 auto;
+  }
+  .ant-modal-content {
+    text-align: center;
+    .ant-modal-header {
+      margin-bottom: 20px;
+    }
+    .ant-btn {
+      @include background_color('color-primary');
+    }
+  }
+}
+// ---------- Modal 結束 ----------
+// ---------- Drawer 開始 ----------
+.ant-drawer {
+  @include md {
+    width: 498px;
+    margin: 0 auto;
+  }
+}
+.ant-drawer-mask {
+  @include md {
+    width: 100%;
+  }
+}
+// ---------- Drawer 結束 ----------

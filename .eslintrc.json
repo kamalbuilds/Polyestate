@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "next",
+    "plugin:prettier/recommended",
+    "prettier",
+    "next/core-web-vitals"
+  ],
+  "plugins": [
+    "simple-import-sort"
+  ],
+  "rules": {
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off",
+    "prettier/prettier": ["error",{
+      "endOfLine": "auto"
+    }],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  }
+}

@@ -1,0 +1,45 @@
+$shadow-card: 0px 0px 24px #493E3914;
+$shadow-nav: 0px 0px 6px 4px #DDDDDD;
+// $shadow-input: 0px 0px 35px 0px #FF8A001A;
+$shadow-input: 1px 5px 20px 0px #8a4a003d;
+$shadow-empty: none;
+
+@mixin shadow($type: 'card', $mode: 'box'){
+    @if ($type == 'card'){
+        @if ($mode == 'box'){
+            box-shadow: $shadow-card;
+            -webkit-box-shadow: $shadow-card;
+            -moz-box-shadow: $shadow-card;
+        }@else{
+            filter: drop-shadow($shadow-card);
+            -webkit-filter: drop-shadow($shadow-card);
+        }
+    } @else if ($type == 'nav'){
+        @if ($mode == 'box'){
+            box-shadow: $shadow-nav;
+            -webkit-box-shadow: $shadow-nav;
+            -moz-box-shadow: $shadow-nav;
+        }@else{
+            filter: drop-shadow($shadow-nav);
+            -webkit-filter: drop-shadow($shadow-nav);
+        }
+    } @else if ($type == 'input'){
+        @if ($mode == 'box'){
+            box-shadow: $shadow-input;
+            -webkit-box-shadow: $shadow-input;
+            -moz-box-shadow: $shadow-input;
+        }@else{
+            filter: drop-shadow($shadow-input);
+            -webkit-filter: drop-shadow($shadow-input);
+        }
+    } @else if ($type == 'empty'){
+        @if ($mode == 'box'){
+            box-shadow: $shadow-empty;
+            -webkit-box-shadow: $shadow-empty;
+            -moz-box-shadow: $shadow-empty;
+        }@else{
+            filter: drop-shadow($shadow-empty);
+            -webkit-filter: drop-shadow($shadow-empty);
+        }
+    }
+}

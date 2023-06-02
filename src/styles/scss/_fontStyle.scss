@@ -1,0 +1,91 @@
+// 字型種類
+$sizeList: (
+  60: 3.75rem,
+  48: 3rem,
+  46: 2.875rem,
+  44: 2.75rem,
+  42: 2.625rem,
+  40: 2.5rem,
+  38: 2.375rem,
+  36: 2.25rem,
+  34: 2.125rem,
+  32: 2rem,
+  30: 1.875rem,
+  28: 1.75rem,
+  26: 1.625rem,
+  24: 1.5rem,
+  22: 1.375rem,
+  20: 1.25rem,
+  18: 1.125rem,
+  16: 1rem,
+  14: 0.875rem,
+  12: 0.75rem,
+  10: 0.625rem,
+);
+
+$lineList: (
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4,
+);
+
+@mixin textFont($value) {
+  font-family: 'NotoSansRegular';
+  font-size: map-get($sizeList, $value);
+  font-weight: 400;
+}
+
+@mixin subTitleFont($value) {
+  font-family: 'NotoSansMedium';
+  font-size: map-get($sizeList, $value);
+  font-weight: 500;
+}
+
+@mixin titleFont($value) {
+  font-family: 'NotoSansBold';
+  font-size: map-get($sizeList, $value);
+  font-weight: 700;
+}
+
+@mixin dominantFont($value) {
+  font-family: 'NotoSansBoldItalic';
+  font-size: map-get($sizeList, $value);
+  font-weight: 700;
+}
+
+@each $item, $value in $sizeList {
+  .textFont-#{$item} {
+    @include textFont($item);
+  }
+  .subTitleFont-#{$item} {
+    @include subTitleFont($item);
+  }
+  .titleFont-#{$item} {
+    @include titleFont($item);
+  }
+}
+
+.fontBold {
+  font-weight: bold;
+}
+
+@mixin ellipsis($item) {
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $item;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@each $item, $value in $lineList {
+  .ellipsis-#{$item} {
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $value;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
