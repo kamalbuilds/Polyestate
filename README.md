@@ -2,6 +2,18 @@
 
 PolyEstate is a revolutionary platform that enables users to tokenize their real estate properties as Non-Fungible Tokens (NFTs) and facilitate seamless buying and selling transactions while ensuring the utmost privacy and security. Powered by Polygon ID, PolyEstate leverages the blockchain technology to provide a transparent and efficient solution for real estate transactions.
 
+## Technologies Used
+
+| Technology                 | Description                                                                                             |
+|----------------------------|---------------------------------------------------------------------------------------------------------|
+| Polygon ID                 | Blockchain technology used to provide transparency and efficiency in real estate transactions           |
+| ZK-Privacy                 | Zero-Knowledge Privacy implementation using Polygon ID to ensure secure and confidential transactions   |
+| Circle                     | Used for cross-chain payments and transactions , straming transactions for the estate properties        |
+| Luniverse NOVA             | Multichain API used for seamless transactions                                                           |
+| Settlemint                 | Development platform for building and interacting with contracts on the Polygon chain                   |
+
+Contracts for the project could be found at https://github.com/legendarykamal/PolyEstate-Contracts
+
 ## Key Features
 
 - NFT-based Property Transactions: PolyEstate allows users to mint their real estate properties as NFTs, enabling easy buying and selling of properties on the blockchain.
