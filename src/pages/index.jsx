@@ -4,8 +4,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { useContract } from '@thirdweb-dev/react';
 import cidToImageUrl from '../utils/cidToImageUrl';
+import { useContract, useNFTs } from "@thirdweb-dev/react";
+import React from "react";
+import Container from "../components/Container/Container";
+import NFTGrid from "../components/NFT/NFTGrid";
 
 const { Text } = Typography;
 
@@ -13,6 +16,8 @@ function Games() {
   const [gameList, setGameList] = useState([]);
   const { contract, isLoading } = useContract("0x3c20e7b59BDaff750708ea965A15155079BB4eb7");
   console.log(contract,"martketplace");
+  const { data, isLoading : nftloading } = useNFTs(contract);
+
   useEffect(() => {
     axios({
       baseURL: 'https://maildeep.info/app',
@@ -44,9 +49,18 @@ function Games() {
             width: '100%',
           }}
         >
-          Properties
+          Properties for sale
         </Text>
 
+    <Container maxWidth="lg">
+      <NFTGrid
+        data={data}
+        isLoading={isLoading}
+        emptyText={
+          "Looks like there are no PolyEstate NFTs yet. Head to the create page to create some!"
+        }
+      />
+    </Container>
         <section
           style={{
             display: 'grid',
