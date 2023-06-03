@@ -105,7 +105,7 @@ export default function Upload() {
       if (!isVendor) {
         openNotification({
           type: 'warning',
-          title: 'Not Eligable',
+          title: 'Not Eligible',
           desc: 'Please become vendor first',
           onClose: () => router.push('/vc'),
         });
@@ -113,7 +113,7 @@ export default function Upload() {
       if (process.env.NODE_ENV === 'production' && !isVendor) {
         openNotification({
           type: 'warning',
-          title: 'Not Eligable',
+          title: 'Not Eligible',
           desc: 'Please become vendor first',
           onClose: () => router.push('/vc'),
         });

@@ -44,7 +44,7 @@ function Games() {
             width: '100%',
           }}
         >
-          Games
+          Properties
         </Text>
 
         <section
