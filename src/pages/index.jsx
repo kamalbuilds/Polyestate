@@ -17,13 +17,12 @@ function Games() {
       baseURL: 'https://maildeep.info/app',
       url: '/game/list',
     }).then((res) => {
-      const list =
-        res.data?.data.map((i) => ({
-          ...i,
-          name: i.title,
-          id: i.gameId,
-          img: cidToImageUrl(i.cover),
-        })) || [];
+      const list = res.data?.data.map((i) => ({
+        ...i,
+        name: i.title,
+        id: i.gameId,
+        img: cidToImageUrl(i.cover),
+      })) || [];
       setGameList(list);
     });
   }, []);

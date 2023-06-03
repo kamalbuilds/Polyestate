@@ -15,7 +15,7 @@ const LayoutComponent = dynamic(() => import('../components/Layout'), {
 
 const { chains, provider } = configureChains(
   [mainnet, polygon, polygonMumbai],
-  [publicProvider()]
+  [publicProvider()],
 );
 
 const { connectors } = getDefaultWallets({

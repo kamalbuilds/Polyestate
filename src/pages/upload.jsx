@@ -21,7 +21,9 @@ import {
 } from 'antd';
 import { BigNumber, utils } from 'ethers';
 import { useRouter } from 'next/router';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import {
+  useCallback, useEffect, useMemo, useState,
+} from 'react';
 import { Controller, useForm, useWatch } from 'react-hook-form';
 import {
   useAccount,
