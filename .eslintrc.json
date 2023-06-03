@@ -11,9 +11,6 @@
   "rules": {
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
-    "prettier/prettier": ["error",{
-      "endOfLine": "auto"
-    }],
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error"
   }
