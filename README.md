@@ -1,6 +1,6 @@
 # 🏛️ PolyEstate
 
-Unlock the Future of Real Estate: Secure, Transparent, and ZK-Private Transactions with Polygon ID
+Revolutionizing Real Estate with Secure, Transparent, and ZK-Private Transactions on the Blockchain with Polygon ID
 
 ## Features
 
