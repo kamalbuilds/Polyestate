@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useAccount, useEnsAvatar } from 'wagmi';
+import logo from "../../public/assets/images/polyestate.png";
 
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
@@ -30,18 +31,19 @@ function HeaderComponent({ style }) {
     >
       <div style={style}>
         <Row justify="space-between" align="middle" className="normal-row">
-          <Col>
+          <Row>
+            <Image src={logo} alt="logo" height={50} className='p-2'/>
             <Link href="/">
               <h1>PolyEstate</h1>
             </Link>
-          </Col>
+          </Row>
 
           <Col style={{ flex: '1' }}>
             {screens.sm ? (
               <Row justify="end">
                 <Space size={20}>
                   <Link href="/vc">Become Vendor</Link>
-                  <Link href="/upload">Create Game</Link>
+                  <Link href="/upload">Create Auction</Link>
                   <ConnectButton label="Sign in" accountStatus="address" />
                   <Link href="/account">
                     <div className="profile" style={{ borderRadius: '50%' }}>

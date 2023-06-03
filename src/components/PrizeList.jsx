@@ -38,7 +38,7 @@ function PrizeList({ prizeList }) {
                     fontWeight: '700',
                   }}
                 >
-                  {prize.type} Prize
+                  {prize.type} Item
                 </Text>
               </Col>
               <div style={{ height: '20px', width: '100%' }} />

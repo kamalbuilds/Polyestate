@@ -58,19 +58,19 @@ const marks = {
 const steps = [
   {
     title: 'Step 1',
-    description: 'Prize type for sale',
+    description: 'Auction type for sale',
   },
   {
     title: 'Step 2',
-    description: 'Package info',
+    description: 'Asset info',
   },
   {
     title: 'Step 3',
-    description: 'Upload your prizes',
+    description: 'Upload your items',
   },
   {
     title: 'Step 4',
-    description: 'Set up drawing price',
+    description: 'Set up the minimum price for Auction',
   },
   {
     title: 'Step 5',
@@ -83,7 +83,7 @@ export default function Upload() {
   const [isUserVendor, setIsUserVendor] = useState(null);
   const [api, contextHolder] = notification.useNotification();
   const router = useRouter();
-
+  console.log(isUserVendor,"h")
   const { address } = useAccount();
   const openNotification = useCallback(
     ({ type, onClose, title, desc }) => {
@@ -168,7 +168,7 @@ export default function Upload() {
           key: index,
           label: (
             <Space>
-              {`${marks[rangeValue]} Prize`}
+              {`${marks[rangeValue]} Item`}
               {isCompleted ? (
                 <CheckCircleOutlined style={{ color: 'green' }} />
               ) : (
@@ -178,7 +178,7 @@ export default function Upload() {
           ),
           children: (
             <>
-              <Form.Item label="prize thumbnail" required>
+              <Form.Item label="item thumbnail" required>
                 <PhotoUpload
                   onCidChange={(cid) => {
                     setValue(`prizeContents.${index}.thumbnailCid`, cid);
@@ -196,7 +196,7 @@ export default function Upload() {
                   }}
                 />
               </Form.Item> */}
-              <Form.Item label="prize amount" required>
+              <Form.Item label="item amount" required>
                 <Controller
                   control={control}
                   defaultValue={1}
@@ -295,7 +295,7 @@ export default function Upload() {
               {steps[step].description}
             </Text>
             {step === 0 && (
-              <Form.Item label="Select Prize type for sale" required>
+              <Form.Item label="Select Auction type for sale" required>
                 <Controller
                   control={control}
                   name="prizeType"
@@ -356,7 +356,7 @@ export default function Upload() {
             )}
             {step === 2 && (
               <>
-                <Form.Item label="Prize grades range" required>
+                <Form.Item label="Number of items to sell in Auction" required>
                   <Controller
                     control={control}
                     name="prizeGradesRange"
@@ -380,7 +380,7 @@ export default function Upload() {
               </>
             )}
             {step === 3 && (
-              <Form.Item label="Drawing price" required>
+              <Form.Item label="Minimum price" required>
                 <Controller
                   control={control}
                   name="drawingPrice"
@@ -389,6 +389,7 @@ export default function Upload() {
                       <InputNumber
                         {...field}
                         min={0.0000001}
+                        defaultValue={0.001}
                         max={9999999}
                         addonAfter="Matic"
                       />
@@ -432,14 +433,14 @@ export default function Upload() {
                 )}
                 {step <= 3 && (
                   <Form.Item>
-                    <Button type="primary" onClick={() => onStepChange(1)}>
+                    <Button type="primary" className="text-green-400" onClick={() => onStepChange(1)}>
                       Next
                     </Button>
                   </Form.Item>
                 )}
                 {step === 4 && (
                   <Form.Item>
-                    <Button type="primary" htmlType="submit" disabled={!write}>
+                    <Button type="primary" htmlType="submit" disabled={!write} className='text-black'>
                       Create
                     </Button>
                   </Form.Item>
