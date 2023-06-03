@@ -13,3 +13,5 @@ Seller-> Verify -> Create NFt
 Buyer -> Verify -> Buy the property
 
 Powered by Web3, Polygon ID, Chainlink VRF, and smart contracts.
+
+Polygon ID verification , you need a generated kyc claim
