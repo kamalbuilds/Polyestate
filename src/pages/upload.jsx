@@ -256,13 +256,12 @@ export default function Upload() {
       openNotification({
         type: 'success',
         title: 'Success',
-        desc: 'People now can join your game!',
+        desc: 'People now can join your auction !',
       });
       window.location.reload();
     }
   }, [isSuccess, openNotification]);
 
-  // if (process.env.NODE_ENV === 'production' && !isUserVendor) return null;
 
   return !isUserVendor ? (
     <main className={styles.main}>{contextHolder}</main>
