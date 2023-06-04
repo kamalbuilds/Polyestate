@@ -4,14 +4,15 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-
+import { useContract } from '@thirdweb-dev/react';
 import cidToImageUrl from '../utils/cidToImageUrl';
 
 const { Text } = Typography;
 
 function Games() {
   const [gameList, setGameList] = useState([]);
-
+  const { contract, isLoading } = useContract("0x3c20e7b59BDaff750708ea965A15155079BB4eb7");
+  console.log(contract,"martketplace");
   useEffect(() => {
     axios({
       baseURL: 'https://maildeep.info/app',

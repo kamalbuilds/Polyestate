@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import '../../public/assets/fonts/font.css';
 import '../styles/scss/style.scss';
 import '@rainbow-me/rainbowkit/styles.css';
-
+import { ThirdwebProvider, useContract } from "@thirdweb-dev/react";
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import dynamic from 'next/dynamic';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
@@ -32,6 +32,7 @@ const wagmiClient = createClient({
 
 export default function App({ Component, pageProps }) {
   return (
+    <ThirdwebProvider activeChain="mumbai">
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains}>
         <LayoutComponent>
@@ -39,5 +40,6 @@ export default function App({ Component, pageProps }) {
         </LayoutComponent>
       </RainbowKitProvider>
     </WagmiConfig>
+    </ThirdwebProvider>
   );
 }
