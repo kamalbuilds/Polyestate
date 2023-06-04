@@ -42,9 +42,9 @@ function HeaderComponent({ style }) {
             {screens.sm ? (
               <Row justify="end">
                 <Space size={20}>
-                  <Link href="/vc">Become Vendor</Link>
+                  <Link href="/vc">Authenticate</Link>
                   <Link href="/upload">Create Auction</Link>
-                  <ConnectButton label="Sign in" accountStatus="address" />
+                  <ConnectButton label="Connect Wallet" accountStatus="address" />
                   <Link href="/account">
                     <div className="profile" style={{ borderRadius: '50%' }}>
                       {ensAvatar ? (
