@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
+    "@circle-fin/circle-sdk": "^2.0.0",
     "@infura/sdk": "^2.4.1",
     "@rainbow-me/rainbowkit": "^0.12.8",
     "@thirdweb-dev/react": "^3.13.0",
