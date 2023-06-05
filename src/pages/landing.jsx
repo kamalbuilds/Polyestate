@@ -74,7 +74,7 @@ const LandingPage = () => {
         Revolutionizing Real Estate with Secure, Transparent, and ZK-Private Transactions
       </Typography>
       <Grid container justify="center">
-        {nftData.map((nft) => (
+        {nftData?.map((nft) => (
           <Card key={nft.id} className={styles.card}>
             <CardMedia
               className={styles.media}
